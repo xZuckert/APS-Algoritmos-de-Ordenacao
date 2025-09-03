@@ -1,4 +1,4 @@
-package QuickSort;
+package Ordination;
 
 public class QuickSort {
 }

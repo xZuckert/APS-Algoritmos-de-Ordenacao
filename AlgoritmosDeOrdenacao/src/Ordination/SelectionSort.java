@@ -1,4 +1,4 @@
-package SelectionSort;
+package Ordination;
 
 public class SelectionSort {
 }
