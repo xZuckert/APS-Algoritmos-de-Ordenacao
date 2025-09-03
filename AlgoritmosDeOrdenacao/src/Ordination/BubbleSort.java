@@ -12,8 +12,6 @@ public class BubbleSort {
                     numeros[i] = numeros[i + 1];
                     numeros[i + 1] = aux;
                     trocou = true;
-                } else {
-                    trocou = false;
                 }
             }
         } while (trocou) ;
