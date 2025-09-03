@@ -1,8 +1,9 @@
 package Ordination;
+import Controller.Menu;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BubbleSort {
+public class BubbleSort extends Menu {
     public static List<Integer> Sort(int[] numeros) {
         boolean trocou;     // variavel para verificar se houve troca de posição dos numeros da lista
         int aux;            // variavel auxiliar
