@@ -26,14 +26,13 @@ public class Menu5000Numeros extends Menu {
                 break;
             case 2:
                 Menu.ExibirTitulo("5000 números ordenados em Selection Sort:");
-                // numerosOrdenados = SelectionSort.Sort(numeros);
-                System.out.println("SelectionSort ainda não implementado.");
-                return;
+                numerosOrdenados = SelectionSort.Sort(numeros);
+                break;
             case 3:
                 Menu.ExibirTitulo("5000 números ordenados em Quick Sort:");
                 // numerosOrdenados = QuickSort.Sort(numeros);
                 System.out.println("QuickSort ainda não implementado.");
-                return;
+                break;
             default:
                 System.out.println("Algoritmo inválido.");
                 return;
