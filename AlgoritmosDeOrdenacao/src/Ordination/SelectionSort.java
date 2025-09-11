@@ -18,7 +18,7 @@ public class SelectionSort {
      * @param arr Array de inteiros a ser ordenado
      * @return Array ordenado
      */
-    public static List<Integer> Sort(int[] arr) {
+    public static int[] Sort(int[] arr) {
         int n = arr.length;
         // Percorre todo o array
         for (int i = 0; i < n; i++) {
@@ -34,10 +34,6 @@ public class SelectionSort {
             arr[i] = arr[minIdx];
             arr[minIdx] = temp;
         }
-        List<Integer> novaOrdem = new ArrayList<>();
-        for(int numero : arr){
-            novaOrdem.add(numero);
-        }
-        return novaOrdem;
+        return arr;
     }
 }

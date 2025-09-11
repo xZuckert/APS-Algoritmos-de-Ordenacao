@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BubbleSort extends Menu {
-    public static List<Integer> Sort(int[] numeros) {
+    public static int[] Sort(int[] numeros) {
         boolean trocou;     // variavel para verificar se houve troca de posição dos numeros da lista
         int aux;            // variavel auxiliar
         do {
@@ -20,11 +20,6 @@ public class BubbleSort extends Menu {
                 }
             }
         } while (trocou) ;
-        // cria a lista com os numeros ordenados
-        List<Integer> novaOrdem = new ArrayList<>();
-        for (int numero: numeros) {
-            novaOrdem.add(numero);
-        }
-        return novaOrdem;
+        return numeros;
     }
 }

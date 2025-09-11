@@ -4,7 +4,7 @@ import Ordination.BubbleSort;
 import Ordination.SelectionSort;
 import Ordination.QuickSort;
 import Reader.LerNumeros;
-import java.util.List;
+import java.util.Arrays;
 
 public class Menu10000Numeros extends Menu {
     private int algoritmoEscolhido; // 1 = Bubble, 2 = Selection, 3 = Quick
@@ -17,7 +17,7 @@ public class Menu10000Numeros extends Menu {
         Thread.sleep(200);
         String localFile = "AlgoritmosDeOrdenacao/src/Reader/NumerosAleatorios/10000NumerosAleatorios.txt";
         int[] numeros = LerNumeros.lerNumeros(localFile);
-        List<Integer> numerosOrdenados = null;
+        int[] numerosOrdenados = {};
         // escolhe o algoritmo
         switch (algoritmoEscolhido) {
             case 1:
@@ -37,7 +37,7 @@ public class Menu10000Numeros extends Menu {
                 System.out.println("Algoritmo inválido.");
                 return;
         }
-        System.out.println(numerosOrdenados);
+        System.out.println(Arrays.toString(numerosOrdenados));
         Thread.sleep(1000);
     }
 }
