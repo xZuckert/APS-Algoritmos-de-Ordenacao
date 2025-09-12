@@ -1,23 +1,6 @@
 package Ordination;
 
-import java.util.ArrayList;
-import java.util.List;
-/**
- * Implementação do algoritmo Selection Sort em Java.
- *
- * O Selection Sort funciona encontrando repetidamente o menor elemento
- * da parte não ordenada do array e colocando-o no início.
- *
- * Complexidade de tempo: O(n²)
- * Complexidade de espaço: O(1)
- */
 public class SelectionSort {
-    /**
-     * Ordena um array usando o algoritmo Selection Sort.
-     *
-     * @param arr Array de inteiros a ser ordenado
-     * @return Array ordenado
-     */
     public static int[] Sort(int[] arr) {
         int n = arr.length;
         // Percorre todo o array

@@ -1,5 +1,4 @@
 package Controller;
-
 import Ordination.BubbleSort;
 import Ordination.SelectionSort;
 import Ordination.QuickSort;
