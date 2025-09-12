@@ -1,9 +1,11 @@
-# Compilados
-*.class
+# Arquivos compilados
 /out/
-# IntelliJ
-.idea/
-*.iml
-# Sistema
+/*.class
+# IntelliJ (não versionar configs locais)
+/.idea/
+/*.iml
+# Arquivos temporários do sistema
 .DS_Store
 Thumbs.db
+# Logs
+*.log
