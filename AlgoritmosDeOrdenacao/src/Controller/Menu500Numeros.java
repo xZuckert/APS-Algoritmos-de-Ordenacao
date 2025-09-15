@@ -6,7 +6,7 @@ import Reader.LerNumeros;
 import java.util.Arrays;
 
 public class Menu500Numeros extends Menu {
-    private int algoritmoEscolhido; // 1 = Bubble, 2 = Selection, 3 = Quick
+    private final int algoritmoEscolhido; // 1 = Bubble, 2 = Selection, 3 = Quick
     public Menu500Numeros(int algoritmoEscolhido) {
         this.algoritmoEscolhido = algoritmoEscolhido;
     }
@@ -15,8 +15,8 @@ public class Menu500Numeros extends Menu {
         super.Executar();
         Thread.sleep(200);
         String localFile = "AlgoritmosDeOrdenacao/src/Reader/NumerosAleatorios/500NumerosAleatorios.txt";
-        int[] numeros = LerNumeros.lerNumeros(localFile); int[] numerosOrdenados = {};
-        long startTime = 0; long endTime = 0; // variaveis para calcular o tempo de execucao do algoritmo de ordenacao
+        int[] numeros = LerNumeros.lerNumeros(localFile); int[] numerosOrdenados;
+        long startTime; long endTime; // variaveis para calcular o tempo de execucao do algoritmo de ordenacao
         // escolhe o algoritmo
         switch (algoritmoEscolhido) {
             case 1:
@@ -34,9 +34,8 @@ public class Menu500Numeros extends Menu {
             case 3:
                 Menu.ExibirTitulo("500 números ordenados em Quick Sort:");
                 startTime = System.currentTimeMillis();
-                //numerosOrdenados = QuickSort.Sort(numeros);
+                numerosOrdenados = QuickSort.Sort(numeros);
                 endTime = System.currentTimeMillis();
-                System.out.println("QuickSort ainda não implementado.");
                 break;
             default:
                 System.out.println("Algoritmo inválido.");
