@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Program {
     public static void main(String[] args) throws InterruptedException {
-        Menu.Logo();
+        Menu.exibirLogo();
         Map<Integer, Menu> opcoes = new HashMap<>();
         opcoes.put(1, new Menu500Numeros(1));
         opcoes.put(2, new Menu1000Numeros(1));

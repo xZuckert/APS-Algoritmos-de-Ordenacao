@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class OpcoesMenu {
-    private Map<Integer, Menu> opcoes;
+    private final Map<Integer, Menu> opcoes;
     public OpcoesMenu(Map<Integer, Menu> opcoes) {
         this.opcoes = opcoes;
     }
@@ -12,7 +12,7 @@ public class OpcoesMenu {
         Scanner sc = new Scanner(System.in);
         while (true) {
             Thread.sleep(500);
-            Menu.ExibirTitulo("Projeto: Algoritmos de Ordenacao");
+            Menu.exibirTitulo("Projeto: Algoritmos de Ordenacao");
             System.out.print("Escolha a quantidade de números para ordenar:\n" +
                     "1 - 500 números\n" +
                     "2 - 1000 números\n" +
@@ -30,31 +30,23 @@ public class OpcoesMenu {
                 continue;
             }
             if (resp == 0) {
-                new MenuSair().Executar();
+                new MenuSair().executar();
                 break;
             }
             if (opcoes.containsKey(resp)) {
                 // Menu de escolha do algoritmo
-                int algoritmoEscolhido = ExibirOpcoesMenuSort(sc);
+                int algoritmoEscolhido = exibirOpcoesMenuSort(sc);
                 if (algoritmoEscolhido == 0) continue; // voltar para menu quantidade
                 // Cria o menu com a escolha do algoritmo
-                Menu menuASerExibido = null;
-                switch (resp) {
-                    case 1:
-                        menuASerExibido = new Menu500Numeros(algoritmoEscolhido);
-                        break;
-                    case 2:
-                        menuASerExibido = new Menu1000Numeros(algoritmoEscolhido);
-                        break;
-                    case 3:
-                        menuASerExibido = new Menu5000Numeros(algoritmoEscolhido);
-                        break;
-                    case 4:
-                        menuASerExibido = new Menu10000Numeros(algoritmoEscolhido);
-                        break;
-                }
+                Menu menuASerExibido = switch (resp) {
+                    case 1 -> new Menu500Numeros(algoritmoEscolhido);
+                    case 2 -> new Menu1000Numeros(algoritmoEscolhido);
+                    case 3 -> new Menu5000Numeros(algoritmoEscolhido);
+                    case 4 -> new Menu10000Numeros(algoritmoEscolhido);
+                    default -> null;
+                };
                 if (menuASerExibido != null) {
-                    menuASerExibido.Executar();
+                    menuASerExibido.executar();
                 }
             } else {
                 System.out.println("Opção Inválida.");
@@ -62,14 +54,17 @@ public class OpcoesMenu {
         }
     }
     // Menu secundário: escolha do algoritmo
-    private int ExibirOpcoesMenuSort(Scanner sc) throws InterruptedException {
+    private int exibirOpcoesMenuSort(Scanner sc) throws InterruptedException {
         Thread.sleep(200);
-        System.out.print("\nEscolha o algoritmo de ordenação:\n" +
-                "1 - BubbleSort\n" +
-                "2 - SelectionSort\n" +
-                "3 - QuickSort\n" +
-                "0 - Voltar\n" +
-                "\nSua opção: ");
+        System.out.print("""
+                
+                Escolha o algoritmo de ordenação:
+                1 - BubbleSort
+                2 - SelectionSort
+                3 - QuickSort
+                0 - Voltar
+                
+                Sua opção:\s""");
         String opcaoEscolhida = sc.nextLine();
         Thread.sleep(200);
         int resp;

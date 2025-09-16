@@ -1,14 +1,14 @@
 package Ordination;
 
 public class QuickSort {
-    public static int[] Sort(int[] arr) {
-        return Sort(arr, 0, arr.length - 1);
+    public static int[] sort(int[] arr) {
+        return sort(arr, 0, arr.length - 1);
     }
-    public static int[] Sort(int[] arr, int inicio, int fim) {
+    public static int[] sort(int[] arr, int inicio, int fim) {
         if (inicio < fim) {
             int pivoIndex = parcionar(arr, inicio, fim);
-            Sort(arr, inicio, pivoIndex - 1);
-            Sort(arr, pivoIndex + 1, fim);
+            sort(arr, inicio, pivoIndex - 1);
+            sort(arr, pivoIndex + 1, fim);
         }
         return arr;
     }

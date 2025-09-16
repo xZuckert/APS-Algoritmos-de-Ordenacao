@@ -1,7 +1,7 @@
 package Ordination;
 
 public class SelectionSort {
-    public static int[] Sort(int[] arr) {
+    public static int[] sort(int[] arr) {
         int n = arr.length;
         // Percorre todo o array
         for (int i = 0; i < n; i++) {

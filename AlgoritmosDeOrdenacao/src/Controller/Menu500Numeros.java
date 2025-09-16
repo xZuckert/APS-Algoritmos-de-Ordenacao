@@ -1,9 +1,5 @@
 package Controller;
-import Ordination.BubbleSort;
-import Ordination.SelectionSort;
-import Ordination.QuickSort;
 import Reader.LerNumeros;
-import java.util.Arrays;
 
 public class Menu500Numeros extends Menu {
     private final int algoritmoEscolhido; // 1 = Bubble, 2 = Selection, 3 = Quick
@@ -11,38 +7,12 @@ public class Menu500Numeros extends Menu {
         this.algoritmoEscolhido = algoritmoEscolhido;
     }
     @Override
-    public void Executar() throws InterruptedException {
-        super.Executar();
+    public void executar() throws InterruptedException {
+        super.executar();
         Thread.sleep(200);
         String localFile = "AlgoritmosDeOrdenacao/src/Reader/NumerosAleatorios/500NumerosAleatorios.txt";
-        int[] numeros = LerNumeros.lerNumeros(localFile); int[] numerosOrdenados;
-        long startTime; long endTime; // variaveis para calcular o tempo de execucao do algoritmo de ordenacao
-        // escolhe o algoritmo
-        switch (algoritmoEscolhido) {
-            case 1:
-                Menu.ExibirTitulo("500 números ordenados em Bubble Sort:");
-                startTime = System.currentTimeMillis();
-                numerosOrdenados = BubbleSort.Sort(numeros);
-                endTime = System.currentTimeMillis();
-                break;
-            case 2:
-                Menu.ExibirTitulo("500 números ordenados em Selection Sort:");
-                startTime = System.currentTimeMillis();
-                numerosOrdenados = SelectionSort.Sort(numeros);
-                endTime = System.currentTimeMillis();
-                break;
-            case 3:
-                Menu.ExibirTitulo("500 números ordenados em Quick Sort:");
-                startTime = System.currentTimeMillis();
-                numerosOrdenados = QuickSort.Sort(numeros);
-                endTime = System.currentTimeMillis();
-                break;
-            default:
-                System.out.println("Algoritmo inválido.");
-                return;
-        }
-        System.out.println(Arrays.toString(numerosOrdenados));
-        System.out.println("Tempo para ordenar 500 elementos: " + (endTime - startTime) + "ms");
+        int[] numeros = LerNumeros.lerNumeros(localFile);
+        iniciarMenu("500 números ordenados em ", numeros, algoritmoEscolhido);
         Thread.sleep(1000);
     }
 }

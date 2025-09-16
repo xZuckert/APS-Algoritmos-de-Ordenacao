@@ -2,7 +2,7 @@ package Ordination;
 import Controller.Menu;
 
 public class BubbleSort extends Menu {
-    public static int[] Sort(int[] arr) {
+    public static int[] sort(int[] arr) {
         boolean trocou;     // variavel para verificar se houve troca de posição dos numeros da lista
         int aux;            // variavel auxiliar
         do {
