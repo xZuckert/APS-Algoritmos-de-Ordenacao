@@ -29,27 +29,30 @@ public class Menu {
         switch (algoritmoEscolhido) {
             case 1:
                 Menu.exibirTitulo(titulo + "Bubble Sort:");
-                startTime = System.currentTimeMillis();
+                startTime = System.nanoTime();
                 numerosOrdenados = BubbleSort.sort(numeros);
-                endTime = System.currentTimeMillis();
+                endTime = System.nanoTime();
                 break;
             case 2:
                 Menu.exibirTitulo(titulo +  "Selection Sort:");
-                startTime = System.currentTimeMillis();
+                startTime = System.nanoTime();
                 numerosOrdenados = SelectionSort.sort(numeros);
-                endTime = System.currentTimeMillis();
+                endTime = System.nanoTime();
                 break;
             case 3:
                 Menu.exibirTitulo(titulo +   "Quick Sort:");
-                startTime = System.currentTimeMillis();
+                startTime = System.nanoTime();
                 numerosOrdenados = QuickSort.sort(numeros);
-                endTime = System.currentTimeMillis();
+                endTime = System.nanoTime();
                 break;
             default:
                 System.out.println("Algoritmo inválido.");
                 return;
         }
         System.out.println(Arrays.toString(numerosOrdenados));
-        System.out.println("Tempo para ordenar elementos: " + (endTime - startTime) + "ms");
+        long tempoNs = endTime - startTime;
+        double tempoMs = tempoNs / 1_000_000.0;
+
+        System.out.printf("Tempo para ordenar elementos: %.2f ms%n", tempoMs);
     }
 }
