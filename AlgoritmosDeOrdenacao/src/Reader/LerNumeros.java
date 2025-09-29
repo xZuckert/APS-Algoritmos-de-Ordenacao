@@ -16,7 +16,7 @@ public class LerNumeros {
                 numeros[i] = Integer.parseInt(partes[i]);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Não foi possivel ler o arquivo");
         }
         return numeros;
     }
